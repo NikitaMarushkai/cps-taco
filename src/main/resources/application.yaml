@@ -1,0 +1,35 @@
+server:
+  address: 0.0.0.0
+  port: 8081
+  context-path: /
+  display-name: CPS Belgium taco-azbil
+  tomcat:
+    remote-ip-header: x-forwarded-for
+    protocol_header: x-forwarded-proto
+
+spring:
+  http:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 100MB
+
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
+  mail:
+    host: smtp.gmail.com
+    username: testcps24@gmail.com
+    password: 123456789aB
+    protocol: smtp
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+          socketFactory:
+            port: 465
+            class: javax.net.ssl.SSLSocketFactory
+            fallback: false
+          ssl:
+            enable: true
+    port: 465
